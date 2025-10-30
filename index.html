@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🌱 IoT Plant Dashboard</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background: #f5fff5;
+    margin: 0;
+    padding: 0;
+  }
+  header {
+    background-color: #2e8b57;
+    color: white;
+    padding: 1em;
+  }
+  .card {
+    display: inline-block;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+    margin: 1em;
+    padding: 1em 2em;
+    min-width: 180px;
+  }
+  .value {
+    font-size: 2.2em;
+    color: #2e8b57;
+  }
+  footer {
+    color: #555;
+    margin-top: 2em;
+  }
+</style>
+</head>
+<body>
+  <header>
+    <h1>🌱 IoT Plant Dashboard</h1>
+    <p>Monitor your plant’s health in real-time</p>
+  </header>
+
+  <div id="cards">
+    <div class="card">
+      <h3>Temperature</h3>
+      <div id="temp" class="value">-- °C</div>
+    </div>
+    <div class="card">
+      <h3>Humidity</h3>
+      <div id="hum" class="value">-- %</div>
+    </div>
+    <div class="card">
+      <h3>Soil Moisture</h3>
+      <div id="soil" class="value">-- %</div>
+    </div>
+    <div class="card">
+      <h3>Light Level</h3>
+      <div id="light" class="value">-- lx</div>
+    </div>
+  </div>
+
+  <footer>© 2025 Smart Garden | Built with IoTDA + ESP32</footer>
+
+<script>
+  // Demo: Simulate data update every 5 seconds
+  // Replace this section later with API fetch from IoTDA or your backend
+  setInterval(() => {
+    document.getElementById('temp').textContent  = (24 + Math.random()*3).toFixed(1) + " °C";
+    document.getElementById('hum').textContent   = (55 + Math.random()*10).toFixed(0) + " %";
+    document.getElementById('soil').textContent  = (40 + Math.random()*20).toFixed(0) + " %";
+    document.getElementById('light').textContent = (300 + Math.random()*100).toFixed(0) + " lx";
+  }, 5000);
+</script>
+</body>
+</html>
